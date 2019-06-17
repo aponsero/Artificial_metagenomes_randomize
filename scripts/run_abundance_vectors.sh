@@ -29,6 +29,9 @@ if [ ! -d "$OUT" ] ; then
     mkdir $OUT
 fi
 
-python $RUN -f $LIST_GENOMES -v $VEC_ABUNDANCE -m $NB_METAGENOMES -o $RESULT_DIR
+python $RUN -f $LIST_GENOMES -v $VEC_ABUNDANCE -m $NB_METAGENOMES -o $OUT
+
+cd $OUT
+find . -type f -name "*.txt" > files.list
 
 echo "Finished `date`">>"$LOG"
